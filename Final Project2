@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+// Define a struct to represent a person
+struct Person {
+    int age;
+    char name[20];
+};
+
+int main() {
+    // Create a struct variable
+    struct Person person1;
+
+    // Assign values to the struct members
+    person1.age = 25;
+    strcpy(person1.name, "John Doe");
+
+    // Create a pointer to a struct
+    struct Person *ptr;
+
+    // Assign the address of person1 to the pointer
+    ptr = &person1;
+
+    // Access the struct members using the pointer
+    printf("Age: %d\n", ptr->age);
+    printf("Name: %s\n", ptr->name);
+
+    // Modify the struct members using the pointer
+    ptr->age = 30;
+    strcpy(ptr->name, "Jane Doe");
+
+    // Print the modified values
+    printf("Modified Age: %d\n", person1.age);
+    printf("Modified Name: %s\n", person1.name);
+
+    return 0;
+}
